@@ -1,0 +1,35 @@
+{
+	"fields": [
+	    {
+            "name" : "sha1",
+            "type" : "Integer"
+        },
+        {
+            "name" : "status_code",
+            "type" : "Integer"
+        },
+        {
+            "name" : "url",
+            "type" : "String"
+        },
+        {
+            "name" : "method_type",
+            "type" : "String"
+        },
+		{
+			"name" : "response_status",
+			"type" : "String"
+		},
+		{
+		    "name" : "response_error",
+		    "type" : "String"
+		}
+	],
+
+    "constraints" : [
+        {
+            "name" : "sha1",
+            "definition" : "unique (sha1) on conflict replace"
+        }
+    ]
+}

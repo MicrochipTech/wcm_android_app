@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/settings_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/settings_toolbar"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
+    <ScrollView
+        android:id="@+id/setting_scroll_view"
+        android:layout_below="@+id/settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/settings_content"
+                style="@style/MatchWidthWrapHeight"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_normal">
+
+                <oak.widget.TextViewWithFont
+                    style="@style/MicrochipLabel1"
+                    android:text="@string/settings_device_info"
+                    />
+
+                <com.iangclifton.android.floatlabel.FloatLabel
+                    android:id="@+id/settings_server_address"
+                    style="@style/MicrochipEditText"
+                    android:hint="@string/settings_server_address"
+                    android:nextFocusDown="@+id/settings_device_uuid"
+                    android:imeOptions="actionNext"
+                    android:inputType="textUri"
+                    app:floatLabelColor="@color/blue"
+                    />
+
+                <com.iangclifton.android.floatlabel.FloatLabel
+                    android:id="@+id/settings_device_uuid"
+                    style="@style/MicrochipEditText"
+                    android:hint="@string/settings_device_uuid"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    app:floatLabelColor="@color/blue"
+                    />
+
+                <oak.widget.TextViewWithFont
+                    style="@style/MicrochipLabel1"
+                    android:layout_marginTop="@dimen/spacing_largest"
+                    android:text="@string/settings_server_trust"
+                    />
+
+                <RelativeLayout
+                    style="@style/MatchWidthWrapHeight"
+                    android:layout_marginTop="@dimen/spacing_large"
+                    >
+
+                    <oak.widget.TextViewWithFont
+                        style="@style/MicrochipLabel3"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerInParent="true"
+                        android:text="@string/settings_ignore_error"
+                        />
+
+                    <com.microchip.widget.MicrochipSwitch
+                        android:id="@+id/ignore_error_switch"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        style="@style/MicrochipSwitch"
+                        />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/settings_wta_attribution"
+                style="@style/Wrap"
+                android:contentDescription="@string/settings_wta_attribution"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:src="@drawable/img_wta_attribution"
+                android:scaleType="fitEnd"
+                android:layout_marginTop="@dimen/spacing_largest"
+                />
+
+            <LinearLayout
+                android:id="@+id/settings_version_attribution"
+                style="@style/MatchWidthWrapHeight"
+                android:layout_marginBottom="@dimen/spacing_normal"
+                android:gravity="center_horizontal|center_vertical">
+
+                <com.willowtreeapps.saguaro.android.widget.VersionTextView
+                    android:id="@+id/version"
+                    style="@style/MicrochipVersionTextView"
+                    />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="4dp"
+                    android:background="@color/black"
+                    />
+
+                <com.willowtreeapps.saguaro.android.widget.AcknowledgmentsTextView
+                    android:id="@+id/acknowledgments"
+                    style="@style/MicrochipVersionTextView"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

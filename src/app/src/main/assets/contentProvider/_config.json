@@ -1,0 +1,16 @@
+{
+    "toolVersion": "1.0",
+    "projectPackageId": "com.microchip",
+    "authority": "com.microchip.provider",
+    "providerJavaPackage": "com.microchip.provider",
+    "providerClassName": "MicrochipProvider",
+    "sqliteHelperClassName": "MicrochipSQLiteOpenHelper",
+    "databaseFileName": "microchip.db",
+    "enableForeignKeys": true,
+    "generateProvider":true,
+    "generateModels":true,
+    "generateViews":false,
+    "generateApi": true,
+    "projectBaseUrl": "http://android.wcm.microchip.com",
+    "generateFragments": false
+}
